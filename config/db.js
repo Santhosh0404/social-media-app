@@ -6,9 +6,9 @@ const connectDB = async () => {
       serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
       socketTimeoutMS: 45000, // Close sockets after 45s of inactivity
     });
-    console.log('✅ MongoDB Connected...');
+    console.log(' MongoDB Connected...');
   } catch (err) {
-    console.error('❌ MongoDB Connection Error:', err.message);
+    console.error('MongoDB Connection Error:', err.message);
     process.exit(1);
   }
 };
@@ -23,7 +23,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 mongoose.connection.on('disconnected', () => {
-  console.log('🔌 Mongoose disconnected');
+  console.log(' Mongoose disconnected');
 });
 
 // Graceful shutdown
